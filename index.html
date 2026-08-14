@@ -74,24 +74,24 @@
         }
         .editor-open-link {
             position: absolute;
-            right: 24px;
-            top: 14px;
+            right: 88px;
+            top: 12px;
             z-index: 40;
             display: inline-flex;
             align-items: center;
             text-decoration: none;
-            border: 1px solid rgba(255,255,255,0.14);
-            border-radius: 999px;
-            background: rgba(11, 15, 25, 0.95);
+            border: 0;
+            background: transparent;
             color: #00E6A5;
-            font-size: 12px;
+            font-size: 20px;
             font-weight: 700;
-            padding: 5px 12px;
+            padding: 0;
             line-height: 1.2;
+            letter-spacing: 0.02em;
         }
         .editor-open-link:hover {
-            background: #00E6A5;
-            color: #0b0f19;
+            color: #5fffd0;
+            text-decoration: underline;
         }
 
         .element {
@@ -117,7 +117,7 @@
         <button type="button" id="btn-lang-zh">中文</button>
         <button type="button" id="btn-lang-en" class="active">EN</button>
       </div>
-      <a class="editor-open-link" id="editor-open-link" href="编辑器PPT.html?import=code_import_edited.html">打开编辑器</a>
+      <a class="editor-open-link" id="editor-open-link" href="编辑器PPT.html?import=code_import_edited.html">Try it now</a>
       <div id="canvas"></div>
     </div>
 
@@ -478,7 +478,7 @@
           if (zhBtn) zhBtn.classList.toggle('active', currentLang === 'zh');
           if (enBtn) enBtn.classList.toggle('active', currentLang === 'en');
           var editorLink = document.getElementById('editor-open-link');
-          if (editorLink) editorLink.textContent = currentLang === 'zh' ? '打开编辑器' : 'Open Editor';
+          if (editorLink) editorLink.textContent = 'Try it now';
           try { localStorage.setItem('companions-html-lang', currentLang); } catch (e) {}
           renderEngine();
         }
